@@ -1,0 +1,17 @@
+---
+- name: Install yum-cron
+  yum:
+    name: yum-cron
+    state: latest
+
+- name: Copy configuration files
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items: "{{ yumcron_config_files }}"
+
+- name: Start and enable yum-cron
+  service:
+    name: yum-cron
+    state: started
+    enabled: true

@@ -1,0 +1,18 @@
+---
+- name: Preflight - Fail if target host is not stable for this Role.
+  fail:
+    msg: "This role is not stable for the target operating system, {{ ansible_distribution }} {{ ansible_distribution_major_version }}."
+  when: (ansible_distribution is not defined) or
+        (ansible_distribution_version is not defined) or
+        (ansible_distribution+" "+ansible_distribution_major_version not in unattended_upgrade_stable_os)
+
+- name: Include Derivate specific Variables.
+  include_vars: "{{ ansible_os_family }}.yml"
+  ignore_errors: true
+
+- name: Include Distribution specific Variables.
+  include_vars: "{{ ansible_distribution }}.yml"
+  ignore_errors: true
+
+- name: Include package manager specific playbook.
+  include_tasks: "{{ ansible_pkg_mgr }}.yml"
