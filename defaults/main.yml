@@ -9,6 +9,7 @@ unattended_upgrade_stable_os:
   - CentOS 8
   - Fedora 30
   - Fedora 31
+  - Fedora 32
 #  - openSUSE Leap 15
 #  - openSUSE Leap 42
 
