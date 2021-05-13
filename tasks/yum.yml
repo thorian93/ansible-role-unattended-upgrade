@@ -1,17 +1,17 @@
 ---
-- name: Install yum-cron
-  yum:
+- name: "Install yum-cron."
+  ansible.builtin.yum:
     name: yum-cron
     state: latest
 
-- name: Copy configuration files
-  template:
+- name: "Copy Configuration Files."
+  ansible.builtin.template:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
   with_items: "{{ yumcron_config_files }}"
 
-- name: Start and enable yum-cron
-  service:
+- name: "Start and enable yum-cron."
+  ansible.builtin.service:
     name: yum-cron
     state: started
     enabled: 'true'

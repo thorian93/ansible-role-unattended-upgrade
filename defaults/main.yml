@@ -4,13 +4,11 @@ unattended_upgrade_stable_os:
   - CentOS 8
   - Debian 9
   - Debian 10
-  - Fedora 30
-  - Fedora 31
   - Fedora 32
-#  - openSUSE Leap 15
-#  - openSUSE Leap 42
+  - Fedora 33
   - Ubuntu 16
   - Ubuntu 18
+  - Ubuntu 20
 
 #######
 # APT #
@@ -56,7 +54,7 @@ unattended_install_on_shutdown: 'false'
 # If empty or unset then no email is sent, make sure that you
 # have a working mail setup on your system. A package that provides
 # 'mailx' must be installed.
-unattended_mail: root@localhost
+unattended_mail: 'false'
 
 #Unattended-Upgrade::MailOnlyOnError
 # Set this value to "true" to get emails only on errors. Default
@@ -64,9 +62,13 @@ unattended_mail: root@localhost
 unattended_mail_only_on_error: 'false'
 
 #Unattended-Upgrade::Remove-Unused-Dependencies
-# Do automatic removal of new unused dependencies after the upgrade
+# Do automatic removal of all unused dependencies after the upgrade
 # (equivalent to apt-get autoremove)
 unattended_remove_unused_dependencies: 'false'
+
+#Unattended-Upgrade::Remove-New-Unused-Dependencies
+# Remove any new unused dependencies after the upgrade
+unattended_remove_new_unused_dependencies: 'true'
 
 #Unattended-Upgrade::Automatic-Reboot
 # Automatically reboot *WITHOUT CONFIRMATION* if a
@@ -83,9 +85,19 @@ unattended_automatic_reboot_time: 'false'
 # I.e. "XB-Upgrade-Requires: app-restart" is set in the debian/control file
 unattended_ignore_apps_require_restart: 'false'
 
+#Unattended-Upgrade::SyslogEnable
+# Write events to syslog, which is useful in environments where syslog
+# messages are sent to a central store.
+unattended_syslog_enable: 'false'
+
+#Unattended-Upgrade::SyslogFacility
+# Write events to the specified syslog facility, or the daemon facility if
+# not specified. Requires the Unattended-Upgrade::SyslogEnable option to be
+# set to true.
+#unattended_syslog_facility: "daemon"
+
 ### APT::Periodic configuration
 # Snatched from /usr/lib/apt/apt.systemd.daily
-
 #APT::Periodic::Update-Package-Lists "0";
 # - Do "apt-get update" automatically every n-days (0=disable)
 unattended_update_package_list: 1
@@ -128,13 +140,16 @@ unattended_autoclean_interval: 7
 # "--force-confdef" and "--force-confold" will ensure updates are applied
 # and old configuration files are preserved.
 unattended_dpkg_options: []
-
-# unattended_dpkg_options:
 #   - "--force-confdef"
 #   - "--force-confold"
 
 # Use apt bandwidth limit feature, this example limits the download speed to 70kb/sec
 #unattended_dl_limit: 70
+
+# Unattended-Upgrade::OnlyOnACPower
+# Download and install upgrades only on AC power
+# (i.e. skip or gracefully stop updates on battery)
+unattended_only_on_ac_power: 'false'
 
 #######
 # YUM #
@@ -166,9 +181,9 @@ yumcron_group_package_types:
   - mandatory
   - default
 yumcron_debuglevel: -2
-# yumcron_skip_broken: 'True'
+# yumcron_skip_broken: 'true'
 yumcron_mdpolicy: group:main
-# yumcron_assumeyes: 'True'
+# yumcron_assumeyes: 'true'
 
 #######
 # DNF #
