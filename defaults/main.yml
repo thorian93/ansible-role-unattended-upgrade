@@ -19,7 +19,7 @@ unattended_cache_valid_time: 3600
 # Unattended-Upgrade::Origins-Pattern
 #  Automatically upgrade packages from these origin patterns
 #  e.g.: 'o=Debian,a=stable', 'o=Debian,a=stable-updates'
-# 
+#
 #  Left unset, distribution-specific defaults will be used through
 #  __unattended_origins_patterns variable only if this variable
 #    is not provided externally
