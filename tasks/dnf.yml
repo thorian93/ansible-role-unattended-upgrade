@@ -15,4 +15,4 @@
 - name: "Enable dnf-automatic."
   ansible.builtin.service:
     name: dnf-automatic.timer
-    enabled: yes
+    enabled: 'yes'
