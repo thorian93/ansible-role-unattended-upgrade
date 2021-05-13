@@ -2,13 +2,13 @@
 
 This role configures unattended upgrades on RHEL/CentOS, Debian/Ubuntu and Fedora servers.
 
-This role is based on the work of @jnv and @samdoran. I am just trying to tie both roles together for simplicity.
-
-Have a look at their distinct roles [ansible-role-unattended-upgrades](https://github.com/jnv/ansible-role-unattended-upgrades) and [ansible-role-yum-cron](https://github.com/samdoran/ansible-role-yum-cron).
+[![Ansible Role: Unattended Upgrade](https://img.shields.io/ansible/role/54830?style=flat-square)](https://galaxy.ansible.com/thorian93/ansible_role_unattended_upgrade)
+[![Ansible Role: Unattended Upgrade](https://img.shields.io/ansible/quality/54830?style=flat-square)](https://galaxy.ansible.com/thorian93/ansible_role_unattended_upgrade)
+[![Ansible Role: Unattended Upgrade](https://img.shields.io/ansible/role/d/54830?style=flat-square)](https://galaxy.ansible.com/thorian93/ansible_role_unattended_upgrade)
 
 ## Here be Dragons!
 
-Be sure to review the variables of this role carefully! The upstream maintainers did an awesome job making their roles stable and secure, but it is up to you to configure the role properly for your needs.
+This is my humble approach on unifying updates across distributions. This is more or less a work in progress so be sure to review the role thoroughly. If you are looking for just one OS family like `Debian` or `CentOS` you might want to look at the projects linked in the [Acknowledgements](#Acknowledgements).
 
 ## Known issues
 
@@ -35,7 +35,7 @@ None.
 
 This role ensures that it is not used against unsupported or untested operating systems by checking, if the right distribution name and major version number are present in a dedicated variable named like `<role-name>_stable_os`. You can find the variable in the role's default variable file at `defaults/main.yml`:
 
-    upgrade_stable_os:
+    role_stable_os:
       - Debian 10
       - Ubuntu 18
       - CentOS 7
@@ -53,6 +53,13 @@ Kudos to [HarryHarcourt](https://github.com/HarryHarcourt) for this idea!
       become: yes
       roles:
         - ansible-role-unattended-upgrade
+
+## Acknowledgements
+
+This role is a combined approach for all major distributions inspired by the following two roles:
+
+- [jnv/ansible-role-unattended-upgrades](https://github.com/jnv/ansible-role-unattended-upgrades)
+- [samdoran/ansible-role-yum-cron](https://github.com/samdoran/ansible-role-yum-cron)
 
 ## Contributing
 
