@@ -2,9 +2,9 @@
 
 This role configures unattended upgrades on RHEL/CentOS, Debian/Ubuntu and Fedora servers.
 
-[![Ansible Role: Unattended Upgrade](https://img.shields.io/ansible/role/54830?style=flat-square)](https://galaxy.ansible.com/thorian93/ansible_role_unattended_upgrade)
-[![Ansible Role: Unattended Upgrade](https://img.shields.io/ansible/quality/54830?style=flat-square)](https://galaxy.ansible.com/thorian93/ansible_role_unattended_upgrade)
-[![Ansible Role: Unattended Upgrade](https://img.shields.io/ansible/role/d/54830?style=flat-square)](https://galaxy.ansible.com/thorian93/ansible_role_unattended_upgrade)
+[![Ansible Role: Unattended Upgrade](https://img.shields.io/ansible/role/55153?style=flat-square)](https://galaxy.ansible.com/thorian93/unattended_upgrade)
+[![Ansible Role: Unattended Upgrade](https://img.shields.io/ansible/quality/55153?style=flat-square)](https://galaxy.ansible.com/thorian93/unattended_upgrade)
+[![Ansible Role: Unattended Upgrade](https://img.shields.io/ansible/role/d/55153?style=flat-square)](https://galaxy.ansible.com/thorian93/unattended_upgrade)
 
 ## Here be Dragons!
 
