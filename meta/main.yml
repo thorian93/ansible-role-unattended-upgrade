@@ -1,7 +1,8 @@
 ---
 galaxy_info:
-  author: Thorian93
-  description: Ansible Role Unattended Upgrade
+  role_name: unattended_upgrades
+  author: thorian93
+  description: Unattended Upgrades Management
   license: "license (MIT)"
 
   min_ansible_version: 2.9
