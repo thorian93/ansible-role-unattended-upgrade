@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: unattended_upgrades
+  role_name: unattended_upgrade
   author: thorian93
   description: Unattended Upgrades Management
   license: "license (MIT)"
