@@ -1,6 +1,6 @@
 # Ansible Role: Unattended Upgrade
 
-This role configures unattended upgrades on RHEL/CentOS, Debian/Ubuntu and Fedora servers.
+This role configures unattended upgrades on Debian/Ubuntu, RHEL/CentOS and Fedora servers.
 
 [![Ansible Role: Unattended Upgrade](https://img.shields.io/ansible/role/55153?style=flat-square)](https://galaxy.ansible.com/thorian93/unattended_upgrade)
 [![Ansible Role: Unattended Upgrade](https://img.shields.io/ansible/quality/55153?style=flat-square)](https://galaxy.ansible.com/thorian93/unattended_upgrade)
@@ -20,7 +20,7 @@ No special requirements; note that this role requires root access, so either run
 
     - hosts: foobar
       roles:
-        - role: ansible-role-unattended-upgrade
+        - role: thorian93.unattended-upgrade
           become: yes
 
 ## Role Variables
